@@ -215,6 +215,9 @@
 }
 
 @media(max-width : 460px) {
+    header{
+        padding: 3rem 1.5rem;
+    }
     .ft-image{
         max-height: 240px;
     }
