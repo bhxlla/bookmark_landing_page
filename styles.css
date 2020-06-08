@@ -278,6 +278,8 @@ button:active {
 #f-t-2:checked ~ .features-tab-head > .labelf-t-2 , 
 #f-t-1:checked ~ .features-tab-head > .labelf-t-1 {
     border-bottom: 2px solid var(--red);
+    color: black;
+    font-weight: bold;
 }
 
 #f-t-3:checked ~ .features-tab-cover > .ftab3,
