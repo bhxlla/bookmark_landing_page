@@ -18,11 +18,13 @@ ul{
 li {
     list-style: none;
 }
+
 button{
-    cursor: pointer;
+    cursor: pointer ;
     border: 1px solid transparent ;
-    font-size: 1rem;
+    font-size: 1rem ;
 }
+
 header {
     padding: 3rem 6rem;
     display: flex;
@@ -32,6 +34,48 @@ header {
 
 .nav-options {
     display: flex;
+}
+.ham-menu {
+    padding: 0.25rem;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 5;
+}
+
+.ham-menu-line {
+    display: block;
+    width: 3rem;
+    height: 4px;
+    margin: 0.5rem 0;
+    background-color: #5368df ;
+    transform-origin: left;
+    transition: transform 400ms ease , opacity 300ms ease ;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-color: indigo;
+}
+
+#ham{ display: none; }
+
+#ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(2) {
+    opacity: 0;
+    background-color: #fa5757;
+}
+#ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(1) {
+    transform: translateY(-5px) rotate(45deg) ;
+    background-color: #fa5757;
+}
+#ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(3) {
+    transform:  translateY(5px) rotate(-405deg) ;
+    background-color: #fa5757;
 }
 
 .nav-option {
@@ -55,7 +99,7 @@ header {
     border: 1px solid var(--red);
     color: var(--red);
 }
-
+/* ---------------------------------------------- */
 .home{
     display: flex;
     justify-content: space-between;
@@ -81,18 +125,23 @@ header {
     color: var(--gray);
 }
 
-.home-descp-btn {
+.home-descp-btn, .ft-btn , .ex-btn , .moreInfo , .join-btn {
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     background-color: var(--blue);
     color: whitesmoke;
-    font-size: 1rem;
     box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.548);
+    font-size: 1rem;
 }
 
 .h-d-p-ff {
     background-color: whitesmoke;
     color: black;
+}
+.h-d-p-ff:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .h-d-p-ch:hover , .ft-btn:hover , .ex-btn:hover , .moreInfo:hover {
@@ -110,16 +159,13 @@ button:active {
     transform: scale(0.95);
 }
 
-.h-d-p-ff:hover {
-    color: black;
-    background-color: white;
-    border: 1px solid black;
-}
 
 
 .home-pic {
     position: relative;
-    width: 45%;
+    width: 50%;
+    display: flex;
+    align-items: center;
 }
 .home-pic > img {
     width: 100%;
@@ -132,21 +178,22 @@ button:active {
     bottom: 0;
     right: 0;
     width: 80%;
-    height: 80%;
+    height: 65%;
     border-radius: 300px 0 0 300px ;
     background-color: var(--blue);
 }
+/* ------------------------------------ */
 
 .features {
     padding: 2rem 0;
 }
 
-.features-head , .features-para {
+.features-head , .features-para , .download-head , .download-para , .faq-header , .faq-para{
     text-align: center;
 }
 
-.features-para {
-    width: 40%;
+.features-para , .download-para, .faq-para {
+    width: 60%;
     margin: auto;
     color: var(--gray);
 }
@@ -170,12 +217,11 @@ button:active {
 }
 
 .f-tab-head:hover {
-    /* border-bottom: 2px solid var(--red); */
     color: var(--red);
 }
 
 .features-tab-cover {
-    height: 500px;
+    min-height: 450px;
     width: 100%;
     padding: 0 6rem ;
     padding-bottom: 4rem;
@@ -183,25 +229,18 @@ button:active {
     overflow: hidden;
 }
 
-.f-t-c-bg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 60%;
-    width: 40%;
-    z-index: 1;
-    background-color: #5368df;
-    border-bottom-right-radius: 400px;
-}
-
 .feature-tab {
+    height: 100%;
     width: 85%;
     margin: auto;
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     /* width: 100%; */
+    z-index: 2;
     height: calc(100% - 4rem );    
 }
 
@@ -210,12 +249,24 @@ button:active {
 }
 
 .ft-image {
-    /* width: 40%; */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 2;
+}
+
+.ft-image::before{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 170%;
+    background-color: var(--blue) ;
+    bottom: 0px;
+    left: 0;
+    z-index: -1;
+    transform: translateX(-70%) translateY(15%);
+    border-bottom-right-radius: 250px;
 }
 
 .ft-image > img {
@@ -228,18 +279,16 @@ button:active {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 0.5rem;
+}
+
+.ft-para{
+    color: var(--gray);
 }
 
 .ft-btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    background-color: var(--blue);
-    color: whitesmoke;
-    font-size: 1rem;
-    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.548);
     align-self: start;
 }
-
 
 [name="chb"] {
     display: none;
@@ -248,7 +297,6 @@ button:active {
 .ftab1, .ftab2 , .ftab3 {
     opacity: 0;
     visibility: hidden;
-    /* transition: opacity 400ms ease , visibility 50ms linear 350ms; */
 }
 
 #f-t-3:checked ~ .features-tab-head > .labelf-t-3 , 
@@ -260,25 +308,14 @@ button:active {
 #f-t-3:checked ~ .features-tab-cover > .ftab3,
 #f-t-2:checked ~ .features-tab-cover > .ftab2,
 #f-t-1:checked ~ .features-tab-cover > .ftab1 {
-    /* transition: opacity 400ms ease  , visibility 50ms linear ; */
     opacity: 1;
     visibility: visible;
 }
 
+/* ----------------------------------- */
 .download {
     padding: 2rem 0;
     padding-bottom: 6rem;
-}
-
-.download-head {
-    text-align: center;
-}
-
-.download-para {
-    color: var(--gray);
-    width: 60%;
-    text-align: center;
-    margin: auto;
 }
 
 .extensions {
@@ -289,7 +326,9 @@ button:active {
 }
 
 .extnsn {
-    min-width: 25%;
+    min-width: 260px;
+    max-width: 400px;
+    width: 30%;
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
@@ -297,6 +336,15 @@ button:active {
     justify-content: center;
     box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.24);
     position: relative;
+}
+
+.bg-dots{
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.bg-dots > img {
+    width: 100%;
 }
 
 .ext2 {
@@ -317,60 +365,72 @@ button:active {
 }
 
 .ex-btn {    
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    background-color: var(--blue);
-    color: whitesmoke;
     font-size: 0.8rem;
-    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.548);
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
+/* ---------------------------------- */
 
 .faqs{
     padding: 2rem 0;
-}
-.faq-header , .faq-para {
-    text-align: center;
-    width: 60%;
-    margin: 1rem auto;
-}
-
-.faq-para{
-    color: var(--gray);
 }
 
 .faq-qa {
     width: 60%;
     padding: 2rem;
-    margin: 0 auto;
+    margin: 1rem auto 0;
 }
 
-.qa {
+.qus{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2rem;
     border-top: 1px solid rgb(180, 180, 180);
-    /* border-bottom: 1px solid gray; */
+    cursor: pointer;
+}
+.qus:hover > p {
+    color: var(--red);
 }
 
-.ans{
+.qus:nth-child(1){
+    border-top: 1px solid rgb(180, 180, 180);
+}
+
+.qa-ans {
     overflow: hidden;
     max-height: 0px;
-    transition: max-height 1s ease ;
+    transition: max-height 200ms linear  ;
 }
 
-#faq-moreInfo:checked ~ .faq-qa > .qa > p.ans {
-    max-height: none;   
+.qa-icon{
+    transition: transform 200ms ease ;
+}
+
+#faq1:checked ~ .faq-qa > [for="faq1"] > .qa-icon,
+#faq2:checked ~ .faq-qa > [for="faq2"] > .qa-icon,
+#faq3:checked ~ .faq-qa > [for="faq3"] > .qa-icon,
+#faq4:checked ~ .faq-qa > [for="faq4"] > .qa-icon {
+    transform: rotate(180deg);
+}
+
+#faq1:checked ~ .faq-qa > #qa1,
+#faq2:checked ~ .faq-qa > #qa2,
+#faq3:checked ~ .faq-qa > #qa3,
+#faq4:checked ~ .faq-qa > #qa4 {
+    max-height: 100vh ;
+}
+
+[name="cbx"] {
+    display: none;
 }
 
 .moreInfo {
     display: block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    background-color: var(--blue);
-    color: whitesmoke;
     font-size: 0.8rem;
-    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.548);
     margin: auto;
 }
 
+/* -------------------------------------------- */
 
 .join {
     padding: 4rem 0;
@@ -380,9 +440,9 @@ button:active {
 .join-para, .join-head {
     text-align: center;
     margin: 1rem auto;
+    width: 60%;
     color: white;
     letter-spacing: 1.5px;
-    width: 50%;
 }
 
 .join-head{
@@ -391,19 +451,12 @@ button:active {
 }
 
 .join-us{
-    margin: auto;
-    text-align: center;
     display: flex;
     justify-content: center;
 }
 
 .join-btn{
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
     background-color: var(--red);
-    color: whitesmoke;
-    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.548);
-    /* margin: auto; */
 }
 
 #join-inp{
@@ -411,19 +464,16 @@ button:active {
     border: none;
     outline: none;
     margin-right: 1rem;
-    min-width: 30%;
+    min-width: 17rem;
 }
 
 
 footer{
     background: #252b46;
     color: #fff;
-
     padding: 4rem;
-
     display: flex;
     justify-content: space-between;
-
 }
 
 .foot-left , .foot-media , .foot-links {
@@ -440,4 +490,6 @@ footer{
     margin: 0 1rem;
     cursor: pointer;
 }
+
+/* https://alligator.io/css/collapsible/ */
 

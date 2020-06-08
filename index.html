@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet"> -->
-
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive-style.css">
   <title>Frontend Mentor | Bookmark landing page</title>
 </head>
 
 <body>
-
+  <input type="checkbox" name="ham-menu-chb" id="ham">
+  <!-- <div class="overlay"></div> -->
+  
   <header class="nav-header">
     <div class="head-logo">
       <img src="images/logo-bookmark.svg" alt="">
@@ -25,6 +25,11 @@
       <li class="nav-option">CONTACT</li>
       <button class="nav-option nav-btn">LOGIN</button>
     </ul>
+    <label class="ham-menu" for="ham" >
+      <span class="ham-menu-line"></span>
+      <span class="ham-menu-line"></span>
+      <span class="ham-menu-line"></span>
+    </label>
   </header>
   <section class="home">
     <div class="home-descp">
@@ -58,7 +63,7 @@
     </div>
 
     <div class="features-tab-cover">
-      <div class="f-t-c-bg"></div>
+      <!-- <div class="f-t-c-bg"></div> -->
       <div class="feature-tab ftab1 ">
         <div class="ft-image">
           <img src="images/illustration-features-tab-1.svg" alt="">
@@ -111,18 +116,27 @@
         </div>
         <h4 class="ex-head">Add to Chrome</h4>
         <p class="ex-ver">Minimum version 62</p>
+        <div class="bg-dots">
+          <img src="images/bg-dots.svg" alt="">
+        </div>
         <button class="ex-btn">Add & Install Extension</button>
       </div>
       <div class="extnsn ext2 ">
         <div class="ex-pic"><img src="images/logo-firefox.svg" alt=""></div>
         <h4 class="ex-head">Add to Firefox</h4>
         <p class="ex-ver">Minimum version 55</p>
+        <div class="bg-dots">
+          <img src="images/bg-dots.svg" alt="">
+        </div>
         <button class="ex-btn">Add & Install Extension</button>
       </div>
       <div class="extnsn ext3 ">
         <div class="ex-pic"><img src="images/logo-opera.svg" alt=""></div>
         <h4 class="ex-head">Add to Opera</h4>
         <p class="ex-ver">Minimum version 46</p>
+        <div class="bg-dots">
+          <img src="images/bg-dots.svg" alt="">
+        </div>
         <button class="ex-btn">Add & Install Extension</button>
       </div>
     </div>
@@ -132,20 +146,33 @@
     <p class="faq-para">Here are some of our FAQs. If you have any other questions you'd like answered please feel free
       to email us.</p>
 
-    <input type="checkbox" name="cbx" id="faq-moreInfo">
-    <label for="faq-moreInfo">
-      <!-- <button >More Info</button> -->
-      Press Me
-    </label>
+    <input type="checkbox" name="cbx" id="faq1">
+    <input type="checkbox" name="cbx" id="faq2">
+    <input type="checkbox" name="cbx" id="faq3">
+    <input type="checkbox" name="cbx" id="faq4">
 
     <div class="faq-qa">
-      <div class="qa">
-        <p class="ques">What is Bookmark?</p>
+
+      <label class="qa qus" for="faq1" >
+        <p class="ques">What is Bookmark?</p> 
+        <div class="qa-icon">
+          <img src="images/icon-arrow.svg" alt="">
+        </div>
+      </label>
+
+      <div class="qa qa-ans" id="qa1" >
         <p class="ans">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt justo eget ultricies
           fringilla. Phasellus blandit ipsum quis quam ornare mattis.</p>
       </div>
-      <div class="qa">
-        <p class="ques">How can I request a new browser?</p>
+
+      <label class="qa qus" for="faq2" >
+        <p class="ques">How can I request a new browser?</p> 
+        <div class="qa-icon">
+          <img src="images/icon-arrow.svg" alt="">
+        </div>
+      </label>
+
+      <div class="qa qa-ans" id="qa2" >
         <p class="ans">
           Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse
           imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
@@ -153,21 +180,36 @@
           ligula. Suspendisse imperdiet.
         </p>
       </div>
-      <div class="qa">
-        <p class="ques">is there a mobile app?</p>
+
+      <label class="qa qus" for="faq3" >
+        <p class="ques">is there a mobile app?</p> 
+        <div class="qa-icon">
+          <img src="images/icon-arrow.svg" alt="">
+        </div>
+      </label>
+
+      <div class="qa qa-ans" id="qa3" >
         <p class="ans">
           Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum urna
           vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin ex et
           ultricies bibendum.
         </p>
       </div>
-      <div class="qa">
-        <p class="ques">What about other Chromium Browsers?</p>
+
+      <label class="qa qus" for="faq4" >
+        <p class="ques">What about other Chromium Browsers?</p> 
+        <div class="qa-icon">
+          <img src="images/icon-arrow.svg" alt="">
+        </div>
+      </label>
+
+      <div class="qa qa-ans" id="qa4" >
         <p class="ans">
           Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque
           eget nisl gravida pellentesque non ut velit.
         </p>
       </div>
+
     </div>
 
     <button class="moreInfo">More Info</button>
