@@ -40,7 +40,6 @@ header {
     cursor: pointer;
     display: none;
     position: relative;
-    z-index: 5;
 }
 
 .ham-menu-line {
@@ -49,34 +48,10 @@ header {
     height: 4px;
     margin: 0.5rem 0;
     background-color: #5368df ;
-    transform-origin: left;
-    transition: transform 400ms ease , opacity 300ms ease ;
-}
-
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 3;
-    background-color: indigo;
+    transition: opacity 20ms ease ;
 }
 
 #ham{ display: none; }
-
-#ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(2) {
-    opacity: 0;
-    background-color: whitesmoke;
-}
-#ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(1) {
-    transform: translateY(-5px) rotate(45deg) ;
-    background-color: whitesmoke;
-}
-#ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(3) {
-    transform:  translateY(5px) rotate(-405deg) ;
-    background-color: whitesmoke;
-}
 
 .nav-option {
     padding: 0.5rem 1.5rem;
@@ -507,12 +482,42 @@ footer{
     visibility: hidden;
     opacity: 0;
     transition: opacity 50ms linear 700ms , visibility 10ms 760ms  ;
+    width: 100%;
+    height: 100vh;
 }
+.white-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ov-cross{
+    display: block;
+    cursor: pointer;
+}
+
+.ov-line{
+    width: 2rem;
+    height: 3px;
+    background-color: whitesmoke;
+}
+
+.ov-line{
+    margin: 1.5rem 0;
+}
+
+#ovl1{
+    transform: translateY(13px) rotate(45deg);
+}
+#ovl2{
+    transform: translateY(-13px) rotate(-45deg);
+}
+
 .overlay-links {
     color: whitesmoke;
     font-weight: bold;
     margin-top: 2rem;
 }
+
 .ov-link:nth-child(1){
     border-top: 1px solid rgba(255, 255, 255, 0.5) ;
 }
@@ -560,4 +565,8 @@ footer{
 #ham:checked ~ .overlay > .overlay-links > .ov-link {
     opacity: 1;
     transform: translateX(0);
+}
+
+#ham:checked ~ header > .ham-menu{
+    opacity: 0;
 }
