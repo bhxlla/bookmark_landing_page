@@ -213,3 +213,17 @@
     }
 
 }
+
+@media(max-width : 460px) {
+    .ft-image{
+        max-height: 240px;
+    }
+    .features-tab-cover{
+        height: 540px;
+    }
+}
+
+
+
+
+
