@@ -221,6 +221,16 @@
     .features-tab-cover{
         height: 540px;
     }
+
+    .home-descp-heading , .join-head{
+        font-size: 1.6rem;
+    }
+
+    .ft-head{
+        font-size: 1.4rem;
+    }
+
+
 }
 
 
