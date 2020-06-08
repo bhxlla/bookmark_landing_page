@@ -67,15 +67,15 @@ header {
 
 #ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(2) {
     opacity: 0;
-    background-color: #fa5757;
+    background-color: whitesmoke;
 }
 #ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(1) {
     transform: translateY(-5px) rotate(45deg) ;
-    background-color: #fa5757;
+    background-color: whitesmoke;
 }
 #ham:checked ~ header > .ham-menu > .ham-menu-line:nth-child(3) {
     transform:  translateY(5px) rotate(-405deg) ;
-    background-color: #fa5757;
+    background-color: whitesmoke;
 }
 
 .nav-option {
@@ -495,4 +495,69 @@ footer{
 
 *{
     -webkit-tap-highlight-color: transparent;
+}
+
+.overlay {
+    padding: 4rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #252b46f8 ;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 50ms linear 700ms , visibility 10ms 760ms  ;
+}
+.overlay-links {
+    color: whitesmoke;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+.ov-link:nth-child(1){
+    border-top: 1px solid rgba(255, 255, 255, 0.5) ;
+}
+.ov-link{
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) ;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 500ms ease , transform 500ms ease ;
+}
+.ov-link:nth-child(2){
+    transition-delay: 100ms;
+}
+.ov-link:nth-child(3){
+    transition-delay: 200ms;
+}
+
+.ov-btn{
+    display: block;
+    margin: auto;
+    margin-top: 1rem ;
+    padding: 1.5rem 0;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid rgba(245, 245, 245, 0.5);
+    background: transparent;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.overlay-foot-links{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+#ham:checked ~ .overlay {
+    transition: opacity 100ms linear , visibility 10ms  ;
+    visibility: visible;
+    opacity: 1;
+}
+
+#ham:checked ~ .overlay > .overlay-links > .ov-link {
+    opacity: 1;
+    transform: translateX(0);
 }
